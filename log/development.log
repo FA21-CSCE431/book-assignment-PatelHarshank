@@ -1445,3 +1445,188 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 111ms (Views: 106.5ms | ActiveRecord: 2.5ms | Allocations: 4728)
 
 
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for 172.17.0.1 at 2021-09-27 19:50:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1639)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 127.4ms | Allocations: 8105)
+Completed 200 OK in 175ms (Views: 139.7ms | ActiveRecord: 2.4ms | Allocations: 12446)
+
+
+Started GET "/books" for 172.17.0.1 at 2021-09-27 19:51:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1045)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 75.8ms | Allocations: 4540)
+Completed 200 OK in 85ms (Views: 81.1ms | ActiveRecord: 2.0ms | Allocations: 5122)
+
+
+Started GET "/books" for 172.17.0.1 at 2021-09-27 19:51:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (7.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.8ms | Allocations: 4273)
+Completed 200 OK in 88ms (Views: 80.3ms | ActiveRecord: 7.1ms | Allocations: 4742)
+
+
+Started GET "/books/new" for 172.17.0.1 at 2021-09-27 19:51:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 40.7ms | Allocations: 4186)
+  Rendered books/new.html.erb within layouts/application (Duration: 56.3ms | Allocations: 4593)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 126.4ms | Allocations: 8100)
+Completed 200 OK in 149ms (Views: 131.7ms | ActiveRecord: 8.5ms | Allocations: 11843)
+
+
+Started POST "/books" for 172.17.0.1 at 2021-09-27 19:51:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Harsank", "author"=>"Tejas", "price"=>"12", "published_date"=>""}, "commit"=>"Create Book"}
+[31mUnpermitted parameters: :author, :price, :published_date[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mBook Create (4.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Harsank"], ["created_at", "2021-09-27 19:51:19.944318"], ["updated_at", "2021-09-27 19:51:19.944318"]]
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3000/books/5
+Completed 302 Found in 57ms (ActiveRecord: 8.9ms | Allocations: 3811)
+
+
+Started GET "/books/5" for 172.17.0.1 at 2021-09-27 19:51:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 323)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 91.5ms | Allocations: 3787)
+Completed 200 OK in 152ms (Views: 104.8ms | ActiveRecord: 3.7ms | Allocations: 8046)
+
+
+Started GET "/books" for 172.17.0.1 at 2021-09-27 19:51:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1034)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | Allocations: 4399)
+Completed 200 OK in 73ms (Views: 69.2ms | ActiveRecord: 1.2ms | Allocations: 4895)
+
+
+Started GET "/books/5" for 172.17.0.1 at 2021-09-27 19:51:22 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 103)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 110.1ms | Allocations: 3468)
+Completed 200 OK in 132ms (Views: 116.9ms | ActiveRecord: 2.0ms | Allocations: 4628)
+
+
+Started GET "/books" for 172.17.0.1 at 2021-09-27 19:51:23 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1003)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 101.6ms | Allocations: 4377)
+Completed 200 OK in 109ms (Views: 104.8ms | ActiveRecord: 3.2ms | Allocations: 4839)
+
+
+Started GET "/books/5/edit" for 172.17.0.1 at 2021-09-27 19:51:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.3ms | Allocations: 1171)
+  Rendered books/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1436)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 96.1ms | Allocations: 4789)
+Completed 200 OK in 115ms (Views: 104.8ms | ActiveRecord: 1.3ms | Allocations: 6065)
+
+
+Started GET "/books" for 172.17.0.1 at 2021-09-27 19:51:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1001)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.3ms | Allocations: 4366)
+Completed 200 OK in 88ms (Views: 85.2ms | ActiveRecord: 1.2ms | Allocations: 4828)
+
+
+Started DELETE "/books/5" for 172.17.0.1 at 2021-09-27 19:51:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mBook Destroy (2.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+Redirected to http://0.0.0.0:3000/books
+Completed 302 Found in 55ms (ActiveRecord: 17.3ms | Allocations: 2916)
+
+
+Started GET "/books" for 172.17.0.1 at 2021-09-27 19:51:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 901)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 93.9ms | Allocations: 4275)
+Completed 200 OK in 99ms (Views: 95.8ms | ActiveRecord: 1.9ms | Allocations: 4742)
+
+
