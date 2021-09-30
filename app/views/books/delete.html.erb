@@ -1,0 +1,14 @@
+<div class="book delete">
+<h2>Delete Subject </h2>
+<h3><%= link_to "LINK TO GO HOME PAGE...", "/books" %></h3>
+<%= form_for(@book, :method => 'delete') do |f| %>
+    <p>Are you sure you are permanently delete this item? </p>
+    <p> <%= @book.title %></p>
+    <div class="form-buttons">
+        <%= f.submit("Delete Book") %>
+    </div>
+    
+    <% end %>
+
+
+</div>
