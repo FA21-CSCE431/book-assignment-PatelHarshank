@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p></p>
 
 <h1>Books</h1>
-
+<h3><%= link_to "LINK TO GO HOME PAGE...", "/books" %></h3>
 <table>
   <thead>
     <tr>
@@ -27,7 +27,10 @@
         
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><%= link_to 'Delete', delete_book_path(book), :class= => 'action-delete' %></td>
+
+
       </tr>
     <% end %>
   </tbody>
